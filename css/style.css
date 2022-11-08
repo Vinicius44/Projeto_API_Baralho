@@ -1,0 +1,25 @@
+*{
+	background-color: #1aa40f;
+	margin:  0;
+	padding:  0;
+	box-sizing: border-box;
+}
+
+
+.center{
+	max-width: 1280px;
+	margin:  0 auto;
+}
+
+.carta{
+
+
+}
+
+img{
+
+	position: absolute;
+	top:  50%;
+	left:  50%;
+	transform: translate(-50%,-50%);
+}
