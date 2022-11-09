@@ -12,6 +12,8 @@
 		<div class="carta">
 
 		</div><!--carta-->
+
+
 	</div><!--center-->
 
 
@@ -27,16 +29,43 @@
 
 		} )
 
-		fetch("https://deckofcardsapi.com/api/deck/ec9n2mp5xhfu/draw/?count=2")
+		fetch("https://deckofcardsapi.com/api/deck/ec9n2mp5xhfu/draw/?count=6")
 		.then(response => response.json())
 		.then(deck => {
 			console.log(deck)
 			var carta = document.querySelector(".carta");
 			console.log(deck.cards[0].image);
-	
-			carta.innerHTML += "<img style='margin: 30px auto; transform: rotateZ(5deg)' src='"+deck.cards[0].image+"'>";
-			carta.innerHTML += "<img style='margin: 30px auto;' src='"+deck.cards[1].image+"'>";
+			
+			deckTX = 60;
+			deckRZ = -5;
+			deckImage = 0;
 
+			for(var i = 0; i <= 4; i++){
+
+				
+			
+
+				setTimeout(() =>{
+
+					carta.innerHTML += "<img style='margin: 30px auto; transform: translate(-"+deckTX+"%, 0%) rotateZ("+deckRZ+"deg)'' src='"+deck.cards[deckImage].image+"'>";
+
+
+					console.log(carta.innerHTML);
+					deckTX = deckTX - 10;
+					deckRZ = deckRZ + 5;
+					deckImage = deckImage + 1;
+				}, i * 800);
+
+				
+			}
+
+
+
+			carta.innerHTML += "<p>BARALHO</p>"
+			
+			/*carta.innerHTML += "<img style='margin: 30px auto;'  src='"+deck.cards[0].image+"'>";
+				carta.innerHTML += "<img style='margin: 30px auto; transform: translate(-40%, -50%) rotateZ(5deg)'' src='"+deck.cards[1].image+"'>";
+				carta.innerHTML += "<img style='margin: 30px auto; transform: translate(-30%, -50%) rotateZ(10deg)'' src='"+deck.cards[2].image+"'>";*/
 
 			
 		});
