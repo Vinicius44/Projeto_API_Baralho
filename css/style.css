@@ -3,6 +3,11 @@
 	margin:  0;
 	padding:  0;
 	box-sizing: border-box;
+
+}
+
+html, body{
+	height: 100%;
 }
 
 
@@ -11,15 +16,13 @@
 	margin:  0 auto;
 }
 
-.carta{
 
 
-}
+
 
 img{
-
 	position: absolute;
-	top:  50%;
+	top:  40%;
 	left:  50%;
 	transform: translate(-50%,-50%);
 }
